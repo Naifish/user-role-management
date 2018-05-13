@@ -5,39 +5,12 @@
  * Date: 2018-05-11
  * Time: 11:06 AM
  */
-
 ?>
-
 <!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>User role management</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/normalize.css">
-    </head>
+<?php require 'includes/head.php'?>
     <body>
     <div class="main">
-       <header>
-            <div class="head">
-                <a class="logo" href="#">play IT</a>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="index.php">HOME</a>
-                        </li>
-                        <li>
-                            <a href="index.php">LOGIN</a>
-                        </li>
-                        <li>
-                            <a href="index.php">REGISTRATION</a>
-                        </li>
-
-                    </ul>
-                    <div class="cb"></div>
-                </nav>
-            </div>
-       </header>
+<?php include 'includes/header.php'?>
     </div>
     <section class="main-plan">
         <section class="plan stu-plan">
@@ -105,15 +78,6 @@
         </section>
         <div class="cb"></div>
     </section>
-    <footer>
-        <p>Copyright &copy; 2018 Naifish Ali. All rights reserved</p>
-        <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">| Terms and Conditions</a></li>
-            <li><a href="#">| Site Map</a></li>
-            <li><a href="#">| About Us</a></li>
-            <li><a href="#">| Contact Us</a></li>
-        </ul>
-    </footer>
+<?php include 'includes/footer.php'?>
     </body>
 </html>
