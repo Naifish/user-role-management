@@ -1,3 +1,218 @@
-h1{
-    color: aqua;
+.main {
+    height: 600px;
+    background-image: url("../images/earphones.jpg");
+    /*height: 100%;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+header{
+    height: 96px;
+    width: 100%;
+    background-color: rgba(88,79,76,0.4);
+   /* position: fixed;*/
+}
+.head{
+    width: 80%;
+    margin: auto;
+    padding-top: 34px;
+}
+.cb{
+    clear:both;
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    /* color: #fff;*/
+    font-weight: bold;
+    color: #ff892f;
+}
+nav ul{
+    float: right;
+}
+nav li{
+    float: left;
+    margin-left: 20px;
+}
+li{
+    list-style: none;
+}
+.head nav li a{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+   /* color: #fff;*/
+    font-weight: bold;
+    color: #ff892f;
+}
+
+.head nav li:last-child a{
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 5px 3px;
+}
+.head nav li:last-child a:hover{
+   color: #fff;
+   background-color: rgba(255,137,47,0.4);
+}
+.main-plan{
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: -100px;
+    left: 0px;
+}
+
+.main-plan .plan{
+    width: 30%;
+    background-color: rgba(104,181,43,0.4);
+    float: left;
+    margin-right: 5%;
+    border-radius: 5px;
+
+}
+.main-plan .plan:nth-child(3){
+    margin-right: 0px;
+}
+
+.main-plan .stu-plan{
+    background-color: rgba(104,181,43,0.2);
+}
+.main-plan .indiv-plan{
+    background-color: rgba(60,193,178,0.2);
+}
+.main-plan .fam-plan{
+    background-color: rgba(64,87,224,0.2);
+}
+.plan .plan-title{
+    width: 100%;
+    height: 70px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.stu-plan .plan-title{
+    background-color: rgb(104,181,43);
+}
+.indiv-plan .plan-title{
+    background-color: rgb(60,193,178);
+}
+.fam-plan .plan-title{
+    background-color: rgb(64,87,224);
+}
+.plan .plan-title h2{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    /* color: #fff;*/
+    font-weight: bold;
+    line-height: 70px;
+    text-align: center;;
+    color: #fff;
+}
+.plan h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+}
+.stu-plan h1{
+    color: rgb(104,181,43);
+}
+.indiv-plan h1{
+    color: rgb(60,193,178);
+}
+.fam-plan h1{
+    color: rgb(64,87,224);
+}
+.plan ul{
+    margin: 10px 0px 0px 20px;
+}
+.plan ul li{
+    list-style-type: circle;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 5px 0px;
+    font-family: Tahoma;
+}
+.plan a{
+    display: block;
+    width: 50%;
+    font-family: "Arial Rounded MT Bold";
+    font-size: 16px;
+    margin: 30px auto;
+    border-radius: 5px;
+    padding: 15px 10%;
+
+    text-align: center;
+}
+.stu-plan a{
+    background-color: rgb(104,181,43);
+    color:#fff;
+}
+.indiv-plan a{
+    background-color: rgb(60,193,178);
+    color:#fff;
+}
+.fam-plan a{
+   background-color: rgb(64,87,224);
+    color:#fff;
+}
+.plan .plan-working{
+    width: 90%;
+    margin: auto;
+    padding-top: 20px;
+}
+.stu-plan .plan-working{
+    border-top: 3px solid rgb(104,181,43);
+}
+.indiv-plan .plan-working{
+    border-top: 3px solid rgb(60,193,178);
+}
+.fam-plan .plan-working{
+    border-top: 3px solid rgb(64,87,224);
+}
+.plan .plan-working h4{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    /* color: #fff;*/
+    font-weight: bold;
+}
+.plan .plan-working p{
+    font-size: 14px;
+}
+.stu-plan .plan-working h4{
+    color: rgb(104,181,43);
+}
+.indiv-plan .plan-working h4{
+    color: rgb(60,193,178);
+}
+.fam-plan .plan-working h4{
+    color: rgb(64,87,224);
+}
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: sienna;
+}
+footer p{
+    width: 50%;
+    float: left;
+    line-height: 50px;
+    margin-left: 20px;
+    color: #fff;
+}
+footer ul{
+    float:right;
+    width: 40%;
+    line-height: 50px;
+}
+footer ul li{
+    float: left;
+    margin-left: 10px;
+}
+footer ul li a{
+    color: #fff;
 }
