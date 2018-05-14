@@ -223,7 +223,7 @@ footer ul li a{
     background-color: rgba(88,79,76,0.8);
 }
 
-.registration-main, .login-main{
+.registration-main, .login-main, .welcome-main{
 
     background-image: url("../images/registration-main-background2.jpg");
     /*height: 100%;*/
@@ -232,10 +232,10 @@ footer ul li a{
     background-size: cover;
     background-attachment: fixed;
 }
-.login-main{
+.login-main, .welcome-main{
     min-height: 900px;
 }
-.registration-form-sec, .login-form-sec{
+.registration-form-sec, .login-form-sec, .welcome-sec{
     width: 40%;
     border: 2px solid #ff892f;
     border-radius: 10px;
@@ -251,7 +251,7 @@ footer ul li a{
     width: 35%;
 }
 
-.registration-form-sec h1, .login-form-sec h1{
+.registration-form-sec h1, .login-form-sec h1, .welcome-sec h1{
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 34px;
@@ -295,4 +295,11 @@ footer ul li a{
 }
 .registration-form-sec p a, .login-form-sec p a{
     color: #fff;
+}
+
+/* */
+
+.welcome-main{
+
+    background-image: url("../images/earbud_headpones.jpg");
 }
