@@ -22,7 +22,7 @@
                     <span>Street Address</span><br><input type="text" name="street" placeholder="Street Address" required>
                     <span>Postal Code</span><br><input type="text" name="postal" placeholder="Postal Code" required>
                     <br><input type="submit" name="btn-submit" value="Create my account">
-                    <p>Already a member? <a href="#">Sign In</a> </p>
+                    <p>Already a member? <a href="login.php">Sign In</a> </p>
                 </form>
             </section>
         </div>

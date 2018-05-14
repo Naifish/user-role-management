@@ -217,13 +217,13 @@ footer ul li a{
     color: #fff;
 }
 
-/*----------------------------- Registration page styling --------------------------------------*/
+/*----------------------------- Registration and Login page styling --------------------------------------*/
 
-.registration-header{
+.dark-header{
     background-color: rgba(88,79,76,0.8);
 }
 
-.registration-main{
+.registration-main, .login-main{
 
     background-image: url("../images/registration-main-background2.jpg");
     /*height: 100%;*/
@@ -232,7 +232,10 @@ footer ul li a{
     background-size: cover;
     background-attachment: fixed;
 }
-.registration-form-sec{
+.login-main{
+    min-height: 900px;
+}
+.registration-form-sec, .login-form-sec{
     width: 40%;
     border: 2px solid #ff892f;
     border-radius: 10px;
@@ -244,7 +247,11 @@ footer ul li a{
     box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
 }
 
-.registration-form-sec h1{
+.login-form-sec{
+    width: 35%;
+}
+
+.registration-form-sec h1, .login-form-sec h1{
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 34px;
@@ -253,13 +260,13 @@ footer ul li a{
     font-weight: bold;
     color: #ff892f;
 }
-.registration-form-sec form span{
+.registration-form-sec form span, .login-form-sec form span{
     font-family: 'Open Sans', sans-serif;
     color: #ff892f;
     font-size: 16px;
 }
 
-.registration-form-sec form input[type=text], input[type=email],input[type=password]{
+.registration-form-sec form input[type=text], input[type=email],input[type=password], .login-form-sec form input[type=text], input[type=email],input[type=password]{
     width: 100%;
     height: 30px;
     border-radius: 5px;
@@ -269,7 +276,7 @@ footer ul li a{
     background-color: rgba(88,79,76,1);
     color: #ff892f;
 }
-.registration-form-sec form input[type=submit]{
+.registration-form-sec form input[type=submit], .login-form-sec form input[type=submit]{
     width: 100%;
     height: 30px;
     border-radius: 5px;
@@ -282,10 +289,10 @@ footer ul li a{
     font-weight: bold;
     cursor: pointer;
 }
-.registration-form-sec p{
+.registration-form-sec p, .login-form-sec p{
     text-align: center;
     color: #ff892f;
 }
-.registration-form-sec p a{
+.registration-form-sec p a, .login-form-sec p a{
     color: #fff;
 }
