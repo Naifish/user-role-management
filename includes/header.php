@@ -1,5 +1,5 @@
 <?php $url=$_SERVER['REQUEST_URI']; ?>
-<header class="<?php if(strpos($url, '/registration.php') == true || strpos($url, '/login.php') == true){ echo 'dark-header';} ?>">
+<header class="<?php if(strpos($url, '/registration.php') == true || strpos($url, '/login.php') == true || strpos($url, '/welcome.php') == true){ echo 'dark-header';} ?>">
     <div class="head">
         <a class="logo" href="index.php">play IT</a>
         <nav>
