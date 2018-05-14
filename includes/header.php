@@ -1,4 +1,5 @@
-<header>
+<?php $url=$_SERVER['REQUEST_URI']; ?>
+<header class="<?php if(strpos($url, '/registration.php') == true){ echo 'registration-header';} ?>">
     <div class="head">
         <a class="logo" href="#">play IT</a>
         <nav>
@@ -10,7 +11,7 @@
                     <a href="index.php">LOGIN</a>
                 </li>
                 <li>
-                    <a href="index.php">REGISTRATION</a>
+                    <a href="registration.php">REGISTRATION</a>
                 </li>
 
             </ul>
