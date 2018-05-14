@@ -23,11 +23,11 @@
                     <li>100 song per day</li>
                     <li>Access online and off line</li>
                     <li>Sync With all devices</li>
-                    <li>Can not share with other devices</li>
+                    <li>No share with other devices</li>
                     <li>No personal play list</li>
                     <li>Limited customization</li>
                 </ul>
-                <a href="#">Try it free*</a>
+                <a href="registration.php">Try it free*</a>
             </div>
             <div class="plan-working">
                 <h4>How plan works!</h4>
@@ -41,14 +41,14 @@
             <div class="plan-info">
                 <h1>$7.99</h1>
                 <ul>
-                    <li>100 song per day</li>
+                    <li>500+ song per day</li>
                     <li>Access online and off line</li>
                     <li>Sync With all devices</li>
-                    <li>Can not share with other devices</li>
-                    <li>No personal play list</li>
-                    <li>Limited customization</li>
+                    <li>share with other devices</li>
+                    <li>Personal play list</li>
+                    <li>Full customization</li>
                 </ul>
-                <a href="#">Try it free*</a>
+                <a href="registration.php">Try it free*</a>
             </div>
             <div class="plan-working">
                 <h4>How plan works!</h4>
@@ -62,14 +62,14 @@
             <div class="plan-info">
                 <h1>$13.99</h1>
                 <ul>
-                    <li>100 song per day</li>
+                    <li>Unlimited song per day</li>
                     <li>Access online and off line</li>
                     <li>Sync With all devices</li>
-                    <li>Can not share with other devices</li>
-                    <li>No personal play list</li>
-                    <li>Limited customization</li>
+                    <li>Share with other devices</li>
+                    <li>Unlimited personal play list</li>
+                    <li>Full customization</li>
                 </ul>
-                <a href="#">Try it free*</a>
+                <a href="registration.php">Try it free*</a>
             </div>
             <div class="plan-working">
                 <h4>How plan works!</h4>
