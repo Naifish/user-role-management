@@ -1,5 +1,4 @@
 <footer>
-    <p>Copyright &copy; 2018 Naifish Ali. All rights reserved</p>
     <ul>
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="#">| Terms and Conditions</a></li>
@@ -7,6 +6,8 @@
         <li><a href="#">| About Us</a></li>
         <li><a href="#">| Contact Us</a></li>
     </ul>
+    <p>Copyright &copy; 2018 Naifish Ali. All rights reserved</p>
+    <div class="cb"></div>
 </footer>
 <?php
 /**
