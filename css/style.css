@@ -8,9 +8,10 @@
     background-attachment: fixed;
 }
 header{
-    height: 96px;
+    /*height: 96px;*/
     width: 100%;
     background-color: rgba(88,79,76,0.4);
+    padding-bottom: 20px;
    /* position: fixed;*/
 }
 .head{
@@ -49,6 +50,9 @@ li{
     font-weight: bold;
     color: #ff892f;
 }
+.head nav li a:hover{
+    color: #fff;
+}
 
 .head nav li:last-child a{
     border: 2px solid #fff;
@@ -63,7 +67,7 @@ li{
     width: 80%;
     margin: auto;
     position: relative;
-    top: -100px;
+    top: -200px;
     left: 0px;
 }
 
@@ -71,8 +75,13 @@ li{
     width: 30%;
     background-color: rgba(104,181,43,0.4);
     float: left;
-    margin-right: 5%;
+    margin:70px 20px 0px 0px;
+    padding-bottom: 20px;
     border-radius: 5px;
+
+}
+.main-plan .plan:nth-child(6){
+    margin-right: 0%;
 
 }
 .main-plan .plan:nth-child(3){
@@ -148,6 +157,22 @@ li{
 
     text-align: center;
 }
+.plan .read-more{
+    display: inline;
+    margin: unset;
+    border-radius: 0px;
+    padding: 0px;
+    background: none;
+}
+.stu-plan .read-more{
+    color: rgb(104,181,43);
+}
+.indiv-plan .read-more{
+    color: rgb(60,193,178);
+}
+.fam-plan .read-more{
+    color: rgb(64,87,224);
+}
 .stu-plan a{
     background-color: rgb(104,181,43);
     color:#fff;
@@ -194,7 +219,7 @@ li{
 }
 footer{
     width: 100%;
-    height: 50px;
+    /*height: 50px;*/
     background-color: sienna;
 }
 footer p{
@@ -207,7 +232,7 @@ footer p{
 footer ul{
     float:right;
     width: 40%;
-    line-height: 50px;
+    margin-top: 20px;
 }
 footer ul li{
     float: left;
@@ -215,6 +240,9 @@ footer ul li{
 }
 footer ul li a{
     color: #fff;
+}
+footer ul li a:hover{
+    color: darkcyan;
 }
 
 /*----------------------------- Registration and Login page styling --------------------------------------*/
@@ -296,10 +324,108 @@ footer ul li a{
 .registration-form-sec p a, .login-form-sec p a{
     color: #fff;
 }
-
-/* */
-
+.registration-form-sec p a:hover, .login-form-sec p a:hover{
+    color: #ff892f;
+}
+/* Welcome page style */
 .welcome-main{
 
     background-image: url("../images/earbud_headpones.jpg");
+}
+
+/*----------------------------- Responsive Home Page --------------------------------------*/
+
+@media only screen and (max-width: 1155px) {
+    footer ul {
+        width: 50%;}
+    footer p {
+        width: 38%;}
+}
+
+@media only screen and (max-width: 960px) {
+    footer p {
+        width: 38%;}
+    footer ul {
+        width: 59%;}
+    footer ul li {
+        margin-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .plan{
+        width: 46% !important;
+        float: left !important;
+        margin: 50px 7px 0px 0px !important;
+    }
+    footer p {
+        float: none;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+    }
+    footer ul {
+        float: none;
+        width: 100%;
+        padding-top: 10px;
+        text-align: center;}
+    footer ul li {
+        float: none;
+    }
+}
+@media only screen and (max-width: 610px) {
+    .plan h2, .plan .plan-working h4{
+        font-size: 16px !important;
+    }
+    .plan h1{
+        font-size: 20px;
+    }
+    .plan a{
+        padding: 5px 5%;
+    }
+    .plan ul li , .plan .plan-working p, .plan a{
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .head{
+        text-align: center;
+    }
+    .logo{
+        float: none;
+    }
+    nav ul {
+        float: none;
+        margin: 10px 0px;
+    }
+    nav ul li {
+        float: none;
+    }
+    nav ul li:last-child {margin-top: 10px;}
+    .registration-form-sec form input[type=submit], .login-form-sec form input[type=submit], .registration-form-sec form span, .login-form-sec form span, .registration-form-sec form input[type=text], input[type=email], input[type=password], .login-form-sec form input[type=text], input[type=email], input[type=password], .registration-form-sec p, .login-form-sec p{
+        font-size: 12px !important;
+    }
+
+}
+@media only screen and (max-width: 320px) {
+    .plan{
+        width: 100% !important;
+        float: none !important;
+        margin-top: 50px;
+    }
+    footer p {
+        float: none;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+    }
+    footer ul {
+        float: none;
+        width: 100%;
+        padding-top: 10px;
+        text-align: center;}
+    footer ul li {
+        float: none;
+    }
 }
