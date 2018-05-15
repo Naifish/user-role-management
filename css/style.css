@@ -295,6 +295,36 @@ footer ul li a:hover{
     font-size: 16px;
 }
 
+.error-sec{
+    width: 100%;
+    border-radius: 5px;
+    margin: 0px auto 20px auto;
+    background-color: rgba(246,206,206,0.9);
+
+}
+.error-sec h3{
+    width: 90%;
+    color: #b75045;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 10px 5%;
+    min-height: 20px;
+    border-radius: 5px;
+    background-color: rgb(246,206,206);
+
+}
+.error-sec ul{
+    width: 90%;
+    padding: 10px 5%;
+}
+.error-sec ul li{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    list-style: disc;
+    color: #b75045;
+}
+
 .registration-form-sec form input[type=text], input[type=email],input[type=password], .login-form-sec form input[type=text], input[type=email],input[type=password]{
     width: 100%;
     height: 30px;
