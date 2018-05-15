@@ -33,6 +33,7 @@
                 <h4>How plan works!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit Sed malesuada magna a odio dictum ultricies. Curabitur euismod at risus at suscipit. Aenean sed rhoncus mauris, et vulputate tellus. Nunc vitae mattis metus....<a href="#" class="read-more">Read more</a></p>
             </div>
+            <div class="cb"></div>
         </section>
         <section class="plan indiv-plan">
             <div class="plan-title">
@@ -54,6 +55,7 @@
                 <h4>How plan works!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit Sed malesuada magna a odio dictum ultricies. Curabitur euismod at risus at suscipit. Aenean sed rhoncus mauris, et vulputate tellus. Nunc vitae mattis metus....<a href="#" class="read-more">Read more</a></p>
             </div>
+            <div class="cb"></div>
         </section>
         <section class="plan fam-plan">
             <div class="plan-title">
@@ -75,6 +77,7 @@
                 <h4>How plan works!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit Sed malesuada magna a odio dictum ultricies. Curabitur euismod at risus at suscipit. Aenean sed rhoncus mauris, et vulputate tellus. Nunc vitae mattis metus....<a href="#" class="read-more">Read more</a></p>
             </div>
+            <div class="cb"></div>
         </section>
         <section class="plan stu-plan">
             <div class="plan-title">
@@ -96,6 +99,7 @@
                 <h4>How plan works!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit Sed malesuada magna a odio dictum ultricies. Curabitur euismod at risus at suscipit. Aenean sed rhoncus mauris, et vulputate tellus. Nunc vitae mattis metus....<a href="#" class="read-more">Read more</a></p>
             </div>
+            <div class="cb"></div>
         </section>
         <section class="plan indiv-plan">
             <div class="plan-title">
@@ -117,6 +121,7 @@
                 <h4>How plan works!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit Sed malesuada magna a odio dictum ultricies. Curabitur euismod at risus at suscipit. Aenean sed rhoncus mauris, et vulputate tellus. Nunc vitae mattis metus....<a href="#" class="read-more">Read more</a></p>
             </div>
+            <div class="cb"></div>
         </section>
         <section class="plan fam-plan">
             <div class="plan-title">
@@ -138,6 +143,7 @@
                 <h4>How plan works!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit Sed malesuada magna a odio dictum ultricies. Curabitur euismod at risus at suscipit. Aenean sed rhoncus mauris, et vulputate tellus. Nunc vitae mattis metus....<a href="#" class="read-more">Read more</a></p>
             </div>
+            <div class="cb"></div>
         </section>
         <div class="cb"></div>
     </section>

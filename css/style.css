@@ -189,6 +189,7 @@ li{
     width: 90%;
     margin: auto;
     padding-top: 20px;
+    min-height: 100px;
 }
 .stu-plan .plan-working{
     border-top: 3px solid rgb(104,181,43);
@@ -354,9 +355,29 @@ footer ul li a:hover{
 
 @media only screen and (max-width: 768px) {
     .plan{
-        width: 46% !important;
-        float: left !important;
-        margin: 50px 7px 0px 0px !important;
+        width: 100% !important;
+        float: none !important;
+        margin: 50px 0px 0px 0px !important;
+    }
+    .plan .plan-info{
+        width: 50%;
+        float: left;
+    }
+    .plan .plan-working{
+        width: 45%;
+        float: left;
+        border-top: none;
+        padding-left: 5px;
+        min-height: 250px;
+    }
+    .stu-plan .plan-working{
+        border-left: 3px solid rgb(104,181,43);
+    }
+    .indiv-plan .plan-working{
+        border-left: 3px solid rgb(60,193,178);
+    }
+    .fam-plan .plan-working{
+        border-left: 3px solid rgb(64,87,224);
     }
     footer p {
         float: none;
@@ -414,6 +435,37 @@ footer ul li a:hover{
         float: none !important;
         margin-top: 50px;
     }
+
+
+
+    .plan{
+        width: 100% !important;
+        float: none !important;
+        margin: 50px 0px 0px 0px !important;
+    }
+    .plan .plan-info{
+        width: 100%;
+        float: none;
+    }
+    .plan .plan-working{
+        width: 95%;
+        float: none;
+        padding: 0px 2%;
+        border-left: none;
+        min-height: 100px;
+    }
+    .stu-plan .plan-working{
+        border-top: 3px solid rgb(104,181,43);
+    }
+    .indiv-plan .plan-working{
+        border-top: 3px solid rgb(60,193,178);
+    }
+    .fam-plan .plan-working{
+        border-top: 3px solid rgb(64,87,224);
+    }
+
+
+
     footer p {
         float: none;
         width: 100%;
