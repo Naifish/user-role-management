@@ -7,6 +7,12 @@
  */
 
 session_start();
+
+if (isset($_GET['logout']) && $_GET['logout']==true){
+    unset($_SESSION["email"]);
+    session_destroy();
+}
+
 if(!isset($_SESSION) || empty($_SESSION['email'])){
     header('location:index.php');
 }

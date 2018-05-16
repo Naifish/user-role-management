@@ -6,7 +6,13 @@
  * Time: 10:43 AM
  */
 
+session_start();
+if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
+
 $email;$pass;$errors;$arrLength=0;
+$servername = "localhost";
+$username = "root";
+$password = "nmen321!@#";
 
 if (isset($_POST['btn-login'])){
     $errors=array();
@@ -26,7 +32,38 @@ if (isset($_POST['btn-login'])){
     $arrLength=count($errors);
 
     if ($arrLength==0){
-        //Check for user acc, login user and redirect...
+        $checkStatement;
+        try {
+            $connect = new PDO("mysql:host=$servername;dbname=playit", $username, $password);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            try{
+                $checkStatement= $connect->prepare("SELECT * FROM users WHERE email=:email");
+                $checkStatement->execute(array(
+                    "email"=>$email
+                ));
+
+                $result = $checkStatement->fetch(PDO::FETCH_ASSOC);
+                if(password_verify($pass, $result['pass'])) {
+                    session_start();
+                    $_SESSION['valid'] = true;
+                    $_SESSION['timeout'] = time();
+                    $_SESSION['email'] = $email;
+
+                    header('location:welcome.php');
+                }else{
+                    $errors[]="Email address or password is incorrect";
+                    $arrLength=count($errors);
+                }
+            }
+            catch (Exception $ex){
+                die("Error in execution of query:" .$ex);
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "Connection failed: " . $e->getMessage()."<br>";
+        }
     }
 
 }

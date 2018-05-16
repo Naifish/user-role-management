@@ -8,12 +8,17 @@
                     <a href="index.php">HOME</a>
                 </li>
                 <li>
+                    <?php if(!isset($_SESSION) || empty($_SESSION['email'])){ ?>
                     <a href="login.php">LOGIN</a>
+                    <?php } else{ ?>
+                    <a href="welcome.php?logout=true">Logout</a>
+                    <?php } ?>
                 </li>
+                <?php if(!isset($_SESSION) || empty($_SESSION['email'])){ ?>
                 <li>
                     <a href="registration.php">REGISTRATION</a>
                 </li>
-
+                <?php } ?>
             </ul>
             <div class="cb"></div>
         </nav>

@@ -6,17 +6,12 @@
  * Time: 7:53 AM
  */
 
+session_start();
+if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
+
 $options = [
     'cost' => 12,
 ];
-
-//insert this pass to the DB
-//$encPass= password_hash("rasmuslerdorf", PASSWORD_BCRYPT, $options);
-
-//check at the time of login
-//if(password_verify("rasmuslerdorf",$encPass)){ echo 'Password matched <br>';} else{ echo 'password did not matched <br>';}
-
-
 
 $firstName=$lastName=$email=$pass=$confPass=$street=$postal=$errors="";$arrLength=0;
 $servername = "localhost";
@@ -82,7 +77,6 @@ if (isset($_POST['btn-submit'])){
                 $checkStatement->execute(array(
                     "email"=>$email,
                 ));
-                echo $checkStatement->rowCount();
             }
             catch (Exception $ex){
                 die("Error in execution of query:" .$ex);
