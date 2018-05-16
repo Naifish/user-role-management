@@ -5,6 +5,12 @@
  * Date: 2018-05-14
  * Time: 11:34 AM
  */
+
+session_start();
+if(!isset($_SESSION) || empty($_SESSION['email'])){
+    header('location:index.php');
+}
+
 ?>
 <!DOCTYPE html>
 <?php require 'includes/head.php'?>

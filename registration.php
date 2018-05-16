@@ -6,7 +6,22 @@
  * Time: 7:53 AM
  */
 
-$firstName;$lastName;$email;$pass;$confPass;$street;$postal;$errors;$arrLength=0;
+$options = [
+    'cost' => 12,
+];
+
+//insert this pass to the DB
+//$encPass= password_hash("rasmuslerdorf", PASSWORD_BCRYPT, $options);
+
+//check at the time of login
+//if(password_verify("rasmuslerdorf",$encPass)){ echo 'Password matched <br>';} else{ echo 'password did not matched <br>';}
+
+
+
+$firstName=$lastName=$email=$pass=$confPass=$street=$postal=$errors="";$arrLength=0;
+$servername = "localhost";
+$username = "root";
+$password = "nmen321!@#";
 
 if (isset($_POST['btn-submit'])){
     $errors=array();
@@ -19,7 +34,7 @@ if (isset($_POST['btn-submit'])){
 
     if (empty($_POST['lastName'])){
         $errors[]="Last Name is required";
-    }elseif (!(preg_match('/^[a-z \'-]+$/',$_POST['lastName']))){
+    }elseif (!(preg_match('/^[A-Za-z \'-]+$/',$_POST['lastName']))){
         $errors[]="Invalid last name: Only letters, space, hyphen and apostrophe are accepted";
     }else{ $lastName=$_POST['lastName']; }
 
@@ -33,7 +48,12 @@ if (isset($_POST['btn-submit'])){
         $errors[]="Password is required";
     }elseif (!(preg_match('/.{8,}/',$_POST['pass']))){
         $errors[]="Invalid password: Eight or more characters are required";
-    }else{ $pass=$_POST['pass']; }
+    }else{
+        $options = [
+            'cost' => 12,
+        ];
+        $pass= password_hash($_POST['pass'], PASSWORD_BCRYPT, $options);
+    }
 
     if (empty($_POST['confPass'])){
         $errors[]="Confirmation password is required";
@@ -52,10 +72,59 @@ if (isset($_POST['btn-submit'])){
     $arrLength=count($errors);
 
     if ($arrLength==0){
-        //ecnrypt pass, login user and redirect...
+        $checkStatement;
+        try {
+            $connect = new PDO("mysql:host=$servername;dbname=playit", $username, $password);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            try{
+                $checkStatement= $connect->prepare("SELECT * FROM users WHERE email= :email");
+                $checkStatement->execute(array(
+                    "email"=>$email,
+                ));
+                echo $checkStatement->rowCount();
+            }
+            catch (Exception $ex){
+                die("Error in execution of query:" .$ex);
+            }
+
+
+            if($checkStatement->rowCount()>0){
+                $errors[]="User with same email address is already registered";
+                $arrLength=count($errors);
+            }
+            else{
+                try{
+                    $prepStatement= $connect->prepare("INSERT INTO users (firstName,lastName,email,pass,street,postal) VALUES(:firstName,:lastName,:email,:pass,:street,:postal)");
+                    $prepStatement->execute(array(
+                        "firstName" => $firstName,
+                        "lastName"=>$lastName,
+                        "email"=>$email,
+                        "pass"=>$pass,
+                        "street"=>$street,
+                        "postal"=>$postal
+                    ));
+                    session_start();
+                    $_SESSION['valid'] = true;
+                    $_SESSION['timeout'] = time();
+                    $_SESSION['email'] = $email;
+
+                    header('location:welcome.php');
+                }
+                catch (Exception $ex){
+                    die("Error in execution of query:" .$ex);
+                }
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "Connection failed: " . $e->getMessage()."<br>";
+        }
     }
 
 }
+
+
 
 ?>
 <!DOCTYPE html>
@@ -75,9 +144,9 @@ if (isset($_POST['btn-submit'])){
                     </ul>
                 </section>
                 <?php }?>
-                <form action="#" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <span>First Name</span><br><input type="text" value="<?php if (isset($_POST['firstName'])){echo $_POST['firstName'];} ?>" name="firstName" placeholder="First Name" required pattern="^[A-Za-z]+$" title="Only letters accepted">
-                    <span>Last Name</span><br><input type="text" value="<?php if (isset($_POST['lastName'])){echo $_POST['lastName'];} ?>" name="lastName" placeholder="Last Name" required required pattern="^[a-z '-]+$" title="Only letters, space, hyphen and apostrophe are accepted">
+                    <span>Last Name</span><br><input type="text" value="<?php if (isset($_POST['lastName'])){echo $_POST['lastName'];} ?>" name="lastName" placeholder="Last Name" required required pattern="^[A-Za-z '-]+$" title="Only letters, space, hyphen and apostrophe are accepted">
                     <!-- regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp -->
                     <span>Email</span><br><input type="email" value="<?php if (isset($_POST['email'])){echo $_POST['email'];} ?>" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Valid email address is required">
                     <span>Password</span><br><input type="password" value="<?php if (isset($_POST['pass'])){echo $_POST['pass'];} ?>" id="pass" name="pass" placeholder="Password" required pattern=".{8,}" title="Eight or more characters are required">
