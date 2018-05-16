@@ -5,6 +5,8 @@
  * Date: 2018-05-11
  * Time: 11:06 AM
  */
+session_start();
+if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
 ?>
 <!DOCTYPE html>
 <?php require 'includes/head.php'?>
