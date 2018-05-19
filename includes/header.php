@@ -3,7 +3,7 @@
     <div class="head">
         <a class="logo" href="index.php">play IT</a>
         <nav>
-            <ul>
+            <ul class="myNav" id="myNav">
                 <li>
                     <a href="index.php">HOME</a>
                 </li>
@@ -19,6 +19,13 @@
                     <a href="registration.php">REGISTRATION</a>
                 </li>
                 <?php } ?>
+                <!-- Reference W3School -->
+                <li>
+                    <a class="icon" onclick="funcApplyRespClass()" href="javascript:void(0);">
+                        <i class="fa-bars fa"></i>
+                    </a>
+                </li>
+                <!-- End of reference W3School -->
             </ul>
             <div class="cb"></div>
         </nav>
