@@ -1,5 +1,10 @@
+.login-main, .registration-main, .welcome-main{
+    /* Reference: https://www.pinterest.ca/pin/415808978068353245 */
+    background-image: url("../images/Back-pattern.png");
+}
 .main {
     height: 600px;
+    /* Reference: https://www.pexels.com/photo/app-earbuds-earphones-google-play-music-39592/ */
     background-image: url("../images/earphones.jpg");
     /*height: 100%;*/
     background-position: center;
@@ -255,14 +260,8 @@ footer ul li a:hover{
     background-color: rgba(88,79,76,0.8);
 }
 
-.registration-main, .login-main, .welcome-main{
-
-    background-image: url("../images/registration-main-background2.jpg");
-    /*height: 100%;*/
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+.registration-main{
+    padding-bottom: 100px;
 }
 .login-main, .welcome-main{
     min-height: 900px;
@@ -362,10 +361,6 @@ footer ul li a:hover{
     color: #ff892f;
 }
 /* Welcome page style */
-.welcome-main{
-
-    background-image: url("../images/earbud_headpones.jpg");
-}
 
 /*----------------------------- Responsive Home Page --------------------------------------*/
 
