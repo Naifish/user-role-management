@@ -6,38 +6,37 @@
  * Time: 7:53 AM
  */
 
+require 'classes/User.php';
+
 session_start();
 if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
 
-$options = [
-    'cost' => 12,
-];
-
-$firstName=$lastName=$email=$pass=$confPass=$street=$postal=$errors="";$arrLength=0;
+$errors="";$arrLength=0;
 $servername = "localhost";
 $username = "root";
 $password = "nmen321!@#";
 
 if (isset($_POST['btn-submit'])){
     $errors=array();
+    $user = new User();
 
     if (empty($_POST['firstName'])){
         $errors[]="First Name is required";
     }elseif (!(preg_match('/^[A-Za-z]+$/',$_POST['firstName']))){
         $errors[]="Invalid first name: Only letters are accepted";
-    }else{ $firstName=$_POST['firstName']; }
+    }else{ $user->_set('firstName',$_POST['firstName']); }
 
     if (empty($_POST['lastName'])){
         $errors[]="Last Name is required";
     }elseif (!(preg_match('/^[A-Za-z \'-]+$/',$_POST['lastName']))){
         $errors[]="Invalid last name: Only letters, space, hyphen and apostrophe are accepted";
-    }else{ $lastName=$_POST['lastName']; }
+    }else{ $user->_set('lastName',$_POST['lastName']); }
 
     if (empty($_POST['email'])){
         $errors[]="Email is required";
     }elseif (!(preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/',$_POST['email']))){
         $errors[]="Invalid email address: Valid email address is required";
-    }else{ $email=$_POST['email']; }
+    }else{ $user->_set('email',$_POST['email']); }
 
     if (empty($_POST['pass'])){
         $errors[]="Password is required";
@@ -47,22 +46,22 @@ if (isset($_POST['btn-submit'])){
         $options = [
             'cost' => 12,
         ];
-        $pass= password_hash($_POST['pass'], PASSWORD_BCRYPT, $options);
+        $user->_set('pass',password_hash($_POST['pass'], PASSWORD_BCRYPT, $options));
     }
 
     if (empty($_POST['confPass'])){
         $errors[]="Confirmation password is required";
     }elseif ($_POST['pass']!=$_POST['confPass']){
         $errors[]="Invalid confirmation password: Passwords Don't Match";
-    }else{ $confPass=$_POST['confPass']; }
+    }else{ $user->_set('confPass',$_POST['confPass']); }
 
     if (!empty($_POST['street']) && !(preg_match('/^\d+\s[A-z, \d]+$/',$_POST['street']))){
         $errors[]="Invalid street address: eg: 245 Harlington street Halifax, NS B3M 1RC, Canada";
-    }else{ $street=$_POST['street']; }
+    }else{ $user->_set('street',$_POST['street']); }
 
     if (!empty($_POST['postal']) && !(preg_match('/^[A-z, \d]{3}\s[A-z, \d]{3}$/',$_POST['postal']))){
         $errors[]="Invalid postal code: Numbers and letters accepted only with one space. eg: XXX XXX";
-    }else{ $postal=$_POST['postal']; }
+    }else{ $user->_set('postal',$_POST['postal']); }
 
     $arrLength=count($errors);
 
@@ -75,7 +74,7 @@ if (isset($_POST['btn-submit'])){
             try{
                 $checkStatement= $connect->prepare("SELECT * FROM users WHERE email= :email");
                 $checkStatement->execute(array(
-                    "email"=>$email,
+                    "email"=>$user->_get('email')
                 ));
             }
             catch (Exception $ex){
@@ -91,17 +90,17 @@ if (isset($_POST['btn-submit'])){
                 try{
                     $prepStatement= $connect->prepare("INSERT INTO users (firstName,lastName,email,pass,street,postal) VALUES(:firstName,:lastName,:email,:pass,:street,:postal)");
                     $prepStatement->execute(array(
-                        "firstName" => $firstName,
-                        "lastName"=>$lastName,
-                        "email"=>$email,
-                        "pass"=>$pass,
-                        "street"=>$street,
-                        "postal"=>$postal
+                        "firstName" => $user->_get('firstName'),
+                        "lastName"=> $user->_get('lastName'),
+                        "email"=> $user->_get('email'),
+                        "pass"=> $user->_get('pass'),
+                        "street"=> $user->_get('street'),
+                        "postal"=> $user->_get('postal')
                     ));
                     session_start();
                     $_SESSION['valid'] = true;
                     $_SESSION['timeout'] = time();
-                    $_SESSION['email'] = $email;
+                    $_SESSION['email'] = $user->_get('email');
 
                     header('location:welcome.php');
                 }
