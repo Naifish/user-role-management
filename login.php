@@ -21,13 +21,13 @@ if (isset($_POST['btn-login'])){
         $errors[]="Email is required";
     }elseif (!(preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/',$_POST['email']))){
         $errors[]="Invalid email address: Valid email address is required";
-    }else{ $email=$_POST['email']; }
+    }else{ $email=checkInput($_POST['email']); }
 
     if (empty($_POST['pass'])){
         $errors[]="Password is required";
     }elseif (!(preg_match('/.{8,}/',$_POST['pass']))){
         $errors[]="Invalid password: Eight or more characters are required";
-    }else{ $pass=$_POST['pass']; }
+    }else{ $pass=checkInput($_POST['pass']); }
 
     $arrLength=count($errors);
 
@@ -68,6 +68,16 @@ if (isset($_POST['btn-login'])){
 
 }
 
+
+/* Reference: https://www.w3schools.com/php/php_form_validation.asp */
+function checkInput($val) {
+    $val = trim($val);
+    $val = stripslashes($val);
+    $val = htmlspecialchars($val);
+    return $val;
+}
+/* End Reference */
+
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +97,7 @@ if (isset($_POST['btn-login'])){
                 </ul>
             </section>
         <?php }?>
-        <form action="#" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <!-- regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp -->
             <span>Email</span><br><input type="email" name="email" placeholder="Email" required required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Valid email address is required">
             <span>Password</span><br><input type="password" name="pass" placeholder="Password" required required pattern=".{8,}" title="Eight or more characters are required">
