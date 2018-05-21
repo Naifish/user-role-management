@@ -86,6 +86,7 @@ li{
     margin:70px 20px 0px 0px;
     padding-bottom: 20px;
     border-radius: 5px;
+    box-sizing:border-box;
 
 }
 .main-plan .plan:nth-child(6){
