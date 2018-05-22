@@ -7,9 +7,7 @@
  */
 
 
-$servername = "localhost";
-$username = "root";
-$password = "nmen321!@#";
+require 'includes/connection.php';
 $firstName="";
 
 session_start();

@@ -13,9 +13,7 @@ session_regenerate_id(true);
 if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
 
 $errors="";$arrLength=0;
-$servername = "localhost";
-$username = "root";
-$password = "nmen321!@#";
+require 'includes/connection.php';
 
 if (isset($_POST['btn-submit'])){
     $errors=array();
