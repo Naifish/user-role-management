@@ -7,6 +7,7 @@
  */
 
 session_start();
+session_regenerate_id(true);
 if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
 
 $email;$pass;$errors;$arrLength=0;
@@ -45,6 +46,11 @@ if (isset($_POST['btn-login'])){
 
                 $result = $checkStatement->fetch(PDO::FETCH_ASSOC);
                 if(password_verify($pass, $result['pass'])) {
+
+                    /* Reference: https://www.youtube.com/watch?v=KnX0p2Ey3Ek */
+                    session_set_cookie_params(time()+700,'/','localhost',false,true);
+                    /* End Reference */
+
                     session_start();
                     $_SESSION['valid'] = true;
                     $_SESSION['timeout'] = time();
