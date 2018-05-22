@@ -9,12 +9,11 @@
 require 'classes/User.php';
 
 session_start();
+session_regenerate_id(true);
 if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
 
 $errors="";$arrLength=0;
-$servername = "localhost";
-$username = "root";
-$password = "nmen321!@#";
+require 'includes/connection.php';
 
 if (isset($_POST['btn-submit'])){
     $errors=array();
@@ -97,6 +96,11 @@ if (isset($_POST['btn-submit'])){
                         "street"=> $user->_get('street'),
                         "postal"=> $user->_get('postal')
                     ));
+
+                    /* Reference: https://www.youtube.com/watch?v=KnX0p2Ey3Ek */
+                    session_set_cookie_params(time()+700,'/','localhost',false,true);
+                    /* End Reference */
+
                     session_start();
                     $_SESSION['valid'] = true;
                     $_SESSION['timeout'] = time();
