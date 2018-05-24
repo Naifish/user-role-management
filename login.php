@@ -18,7 +18,9 @@ if (isset($_POST['btn-login'])){
 
    if (empty($_POST['email'])){
         $errors[]="Email is required";
+       /*regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp*/
     }elseif (!(preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/',$_POST['email']))){
+       /* end of reference */
         $errors[]="Invalid email address: Valid email address is required";
     }else{ $email=checkInput($_POST['email']); }
 
@@ -104,6 +106,7 @@ function checkInput($val) {
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <!-- regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp -->
             <span>Email</span><br><input type="email" name="email" placeholder="Email" required required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Valid email address is required">
+            <!-- end of reference -->
             <span>Password</span><br><input type="password" name="pass" placeholder="Password" required required pattern=".{8,}" title="Eight or more characters are required">
             <br><input type="submit" name="btn-login" value="Login"><p><a href="registration.php">Create Account</a> | <a href="#">Forgot Password</a> </p>
         </form>
