@@ -24,7 +24,7 @@ if(!isset($_SESSION) || empty($_SESSION['email'])){
         $connect = new PDO("mysql:host=$servername;dbname=playit", $username, $password);
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        try{
+        /*try{
             $checkStatement= $connect->prepare("SELECT * FROM users WHERE email= :email");
             $checkStatement->execute(array(
                 "email"=>$_SESSION['email']
@@ -35,6 +35,17 @@ if(!isset($_SESSION) || empty($_SESSION['email'])){
         }
         catch (Exception $ex){
             die("Error in execution of query:" .$ex);
+        }*/
+        try{
+            $email=$_SESSION["email"];
+            $data = $connect->query("SELECT * FROM users WHERE email='$email'");
+            while ($record = $data->fetch())
+            {
+                $firstName = $record['firstName'];
+            }
+        }
+        catch (Exception $ex){
+            echo "Error occurred in query execution: " . $ex->getMessage()."<br>";
         }
     }
     catch(PDOException $e)
