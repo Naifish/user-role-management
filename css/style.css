@@ -278,8 +278,8 @@ footer ul li a:hover{
     margin: 100px auto;
     padding: 50px;
     background-color: rgba(88,79,76,0.8);
-    -webkit-box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
+    /*-webkit-box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);*/
     box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
 }
 
