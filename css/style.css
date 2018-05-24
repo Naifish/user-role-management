@@ -86,7 +86,7 @@ li{
     width: 30%;
     background-color: rgba(104,181,43,0.4);
     float: left;
-    margin:70px 20px 0px 0px;
+    margin:70px 20px 0px 0px !important;
     padding-bottom: 20px;
     border-radius: 5px;
     box-sizing:border-box;
