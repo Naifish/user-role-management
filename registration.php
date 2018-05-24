@@ -135,6 +135,7 @@ function checkInput($val) {
 
 ?>
 <!DOCTYPE html>
+<html lang="en">
     <?php require 'includes/head.php'?>
     <body>
         <div class="registration-main">
@@ -153,7 +154,7 @@ function checkInput($val) {
                 <?php }?>
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <span>First Name</span><br><input type="text" value="<?php if (isset($_POST['firstName'])){echo htmlentities($_POST['firstName']);} ?>" name="firstName" placeholder="First Name" required pattern="^[A-Za-z]+$" title="Only letters accepted">
-                    <span>Last Name</span><br><input type="text" value="<?php if (isset($_POST['lastName'])){echo htmlentities($_POST['lastName']);} ?>" name="lastName" placeholder="Last Name" required required pattern="^[A-Za-z '-]+$" title="Only letters, space, hyphen and apostrophe are accepted">
+                    <span>Last Name</span><br><input type="text" value="<?php if (isset($_POST['lastName'])){echo htmlentities($_POST['lastName']);} ?>" name="lastName" placeholder="Last Name" required pattern="^[A-Za-z '-]+$" title="Only letters, space, hyphen and apostrophe are accepted">
                     <!-- regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp -->
                     <span>Email</span><br><input type="email" value="<?php if (isset($_POST['email'])){echo htmlentities($_POST['email']);} ?>" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Valid email address is required">
                     <!-- end of reference -->
@@ -168,7 +169,7 @@ function checkInput($val) {
         </div>
         <?php include 'includes/footer.php'?>
         <!-- Reference: https://codepen.io/diegoleme/pen/surIK -->
-        <script type="text/javascript">
+        <script>
             var pass = document.getElementById("pass")
                 , confPass = document.getElementById("conf-pass");
             function matchPassword(){
