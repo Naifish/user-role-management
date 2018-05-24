@@ -56,6 +56,7 @@ if(!isset($_SESSION) || empty($_SESSION['email'])){
 
 ?>
 <!DOCTYPE html>
+<html lang="en">
 <?php require 'includes/head.php'?>
 <body>
 <div class="welcome-main">

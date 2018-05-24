@@ -71,6 +71,9 @@ li{
    color: #fff;
    background-color: rgba(255,137,47,0.4);
 }
+.main-plan h1{
+    display: none;
+}
 .main-plan{
     width: 80%;
     margin: auto;
@@ -130,19 +133,20 @@ li{
     text-align: center;;
     color: #fff;
 }
-.plan h1{
+.plan span{
     font-family: 'Open Sans', sans-serif;
     font-size: 34px;
     font-weight: bold;
     text-align: center;
+    display: block;
 }
-.stu-plan h1{
+.stu-plan span{
     color: rgb(104,181,43);
 }
-.indiv-plan h1{
+.indiv-plan span{
     color: rgb(60,193,178);
 }
-.fam-plan h1{
+.fam-plan span{
     color: rgb(64,87,224);
 }
 .plan ul{
@@ -274,8 +278,8 @@ footer ul li a:hover{
     margin: 100px auto;
     padding: 50px;
     background-color: rgba(88,79,76,0.8);
-    -webkit-box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
+    /*-webkit-box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);*/
     box-shadow: 4px 6px 53px 0px rgba(0,0,0,0.75);
 }
 
@@ -455,7 +459,7 @@ footer ul li a:hover{
     .plan h2, .plan .plan-working h4{
         font-size: 16px !important;
     }
-    .plan h1{
+    .plan span{
         font-size: 20px;
     }
     .plan a{

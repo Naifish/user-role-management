@@ -8,19 +8,21 @@
 session_start();
 if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html >
+<html lang="en">
 <?php require 'includes/head.php'?>
     <body>
     <div class="main">
 <?php include 'includes/header.php'?>
     </div>
     <section class="main-plan">
+        <h1>New Plan</h1>
         <section class="plan stu-plan">
             <div class="plan-title">
                 <h2>Student Plan</h2>
             </div>
             <div class="plan-info">
-                <h1>$3.99</h1>
+                <span>$3.99</span>
                 <ul>
                     <li>100 song per day</li>
                     <li>Access online and off line</li>
@@ -42,7 +44,7 @@ if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php
                 <h2>Individual Plan</h2>
             </div>
             <div class="plan-info">
-                <h1>$7.99</h1>
+                <span>$7.99</span>
                 <ul>
                     <li>500+ song per day</li>
                     <li>Access online and off line</li>
@@ -64,7 +66,7 @@ if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php
                 <h2>Family Plan</h2>
             </div>
             <div class="plan-info">
-                <h1>$13.99</h1>
+                <span>$13.99</span>
                 <ul>
                     <li>Unlimited song per day</li>
                     <li>Access online and off line</li>
@@ -86,7 +88,7 @@ if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php
                 <h2>New Student Plan</h2>
             </div>
             <div class="plan-info">
-                <h1>$3.99</h1>
+                <span>$3.99</span>
                 <ul>
                     <li>100 song per day</li>
                     <li>Access online and off line</li>
@@ -108,7 +110,7 @@ if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php
                 <h2>New Individual Plan</h2>
             </div>
             <div class="plan-info">
-                <h1>$7.99</h1>
+                <span>$7.99</span>
                 <ul>
                     <li>500+ song per day</li>
                     <li>Access online and off line</li>
@@ -130,7 +132,7 @@ if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php
                 <h2>New Family Plan</h2>
             </div>
             <div class="plan-info">
-                <h1>$13.99</h1>
+                <span>$13.99</span>
                 <ul>
                     <li>Unlimited song per day</li>
                     <li>Access online and off line</li>
