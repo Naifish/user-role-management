@@ -33,7 +33,9 @@ if (isset($_POST['btn-submit'])){
 
     if (empty($_POST['email'])){
         $errors[]="Email is required";
+        /*regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp*/
     }elseif (!(preg_match('/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/',$_POST['email']))){
+        /* end of reference */
         $errors[]="Invalid email address: Valid email address is required";
     }else{ $user->_set('email',checkInput($_POST['email'])); }
 
@@ -154,6 +156,7 @@ function checkInput($val) {
                     <span>Last Name</span><br><input type="text" value="<?php if (isset($_POST['lastName'])){echo htmlentities($_POST['lastName']);} ?>" name="lastName" placeholder="Last Name" required required pattern="^[A-Za-z '-]+$" title="Only letters, space, hyphen and apostrophe are accepted">
                     <!-- regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp -->
                     <span>Email</span><br><input type="email" value="<?php if (isset($_POST['email'])){echo htmlentities($_POST['email']);} ?>" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Valid email address is required">
+                    <!-- end of reference -->
                     <span>Password</span><br><input type="password" value="<?php if (isset($_POST['pass'])){echo htmlentities($_POST['pass']);} ?>" id="pass" name="pass" placeholder="Password" required pattern=".{8,}" title="Eight or more characters are required">
                     <span>Confirm Password</span><br><input type="password" value="<?php if (isset($_POST['confPass'])){echo htmlentities($_POST['confPass']);} ?>" id="conf-pass" name="confPass" placeholder="Confirm Password" required>
                     <span>Street Address</span><br><input type="text" value="<?php if (isset($_POST['street'])){echo htmlentities($_POST['street']);} ?>" name="street" placeholder="Street Address" pattern="^\d+\s[A-z, \d]+" title=" eg: 245 Harlington street Halifax, NS B3M 1RC, Canada">
@@ -178,6 +181,7 @@ function checkInput($val) {
             pass.onchange = matchPassword;
             confPass.onkeyup = matchPassword;
         </script>
+        <!-- end of reference -->
     </body>
 </html>
 
