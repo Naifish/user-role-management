@@ -56,7 +56,7 @@ if (isset($_POST['btn-login'])){
                     $_SESSION['timeout'] = time();
                     $_SESSION['email'] = $email;
 
-                    header('location:welcome.php');
+                    header('location:welcome.php?status=login');
                 }else{
                     $errors[]="Email address or password is incorrect";
                     $arrLength=count($errors);
