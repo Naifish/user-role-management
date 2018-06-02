@@ -61,9 +61,7 @@ if(!isset($_SESSION) || empty($_SESSION['email'])){
 <body>
 <div class="welcome-main">
     <?php include 'includes/header.php'?>
-    <section class="welcome-sec">
-        <h1>Welcome <?php if(isset($_GET['status']) && $_GET['status']=='login'){ echo 'back ';} echo $firstName; ?></h1>
-    </section>
+    <?php include 'includes/user-profile.php'?>
 </div>
 <?php include 'includes/footer.php'?>
 </body>
