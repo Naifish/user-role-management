@@ -74,11 +74,29 @@ li{
 .main-plan h1{
     display: none;
 }
+.welcome-back-notification{
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: -400px;
+    left: 0px;
+    background-color: rgba(104,181,43,0.2);
+    border-radius: 20px;
+    height: 70px;
+}
+.welcome-back-notification p{
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 70px;
+}
 .main-plan{
     width: 80%;
     margin: auto;
     position: relative;
-    top: -200px;
+    top: -300px;
     left: 0px;
 }
 
