@@ -89,26 +89,37 @@ if (isset($_POST['btn-submit'])){
             }
             else{
                 try{
-                    $prepStatement= $connect->prepare("INSERT INTO users (firstName,lastName,email,pass,street,postal) VALUES(:firstName,:lastName,:email,:pass,:street,:postal)");
-                    $prepStatement->execute(array(
-                        "firstName" => $user->_get('firstName'),
-                        "lastName"=> $user->_get('lastName'),
-                        "email"=> $user->_get('email'),
-                        "pass"=> $user->_get('pass'),
-                        "street"=> $user->_get('street'),
-                        "postal"=> $user->_get('postal')
-                    ));
+                    $firstName= $user->_get('firstName');
+                    $lastName= $user->_get('lastName');
+                    $email= $user->_get('email');
+                    $pass= $user->_get('pass');
+                    $street= $user->_get('street');
+                    $postal= $user->_get('postal');
 
-                    /* Reference: https://www.youtube.com/watch?v=KnX0p2Ey3Ek */
-                    session_set_cookie_params(time()+700,'/','localhost',false,true);
-                    /* End Reference */
+                    $result = $connect->query(" INSERT INTO users (firstName,lastName,email,pass,street,postal) VALUES('$firstName','$lastName','$email','$pass','$street','$postal')");
 
-                    session_start();
-                    $_SESSION['valid'] = true;
-                    $_SESSION['timeout'] = time();
-                    $_SESSION['email'] = $user->_get('email');
+                    /* $prepStatement= $connect->prepare("INSERT INTO users (firstName,lastName,email,pass,street,postal) VALUES(:firstName,:lastName,:email,:pass,:street,:postal)");
+                     $prepStatement->execute(array(
+                         "firstName" => $user->_get('firstName'),
+                         "lastName"=> $user->_get('lastName'),
+                         "email"=> $user->_get('email'),
+                         "pass"=> $user->_get('pass'),
+                         "street"=> $user->_get('street'),
+                         "postal"=> $user->_get('postal')
+                     ));*/
 
-                    header('location:welcome.php');
+                    if ($result==true){
+                        /* Reference: https://www.youtube.com/watch?v=KnX0p2Ey3Ek */
+                        session_set_cookie_params(time()+700,'/','localhost',false,true);
+                        /* End Reference */
+
+                        session_start();
+                        $_SESSION['valid'] = true;
+                        $_SESSION['timeout'] = time();
+                        $_SESSION['email'] = $user->_get('email');
+
+                        header('location:welcome.php');
+                    }
                 }
                 catch (Exception $ex){
                     die("Error in execution of query:" .$ex);
