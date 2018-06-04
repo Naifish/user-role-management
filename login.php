@@ -35,7 +35,7 @@ if (isset($_POST['btn-login'])){
     if ($arrLength==0){
         $checkStatement;
         try {
-            $connect = new PDO("mysql:host=$servername;dbname=playit", $username, $password);
+            $connect = new PDO("mysql:host=$servername;dbname=".$dbName, $username, $password);
             $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             try{

@@ -21,7 +21,7 @@ if(!isset($_SESSION) || empty($_SESSION['email'])){
     header('location:index.php');
 }else{
     try {
-        $connect = new PDO("mysql:host=$servername;dbname=playit", $username, $password);
+        $connect = new PDO("mysql:host=$servername;dbname=".$dbName, $username, $password);
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*try{
