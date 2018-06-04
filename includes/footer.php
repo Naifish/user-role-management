@@ -9,7 +9,7 @@
     <p>Copyright &copy; 2018 Naifish Ali. All rights reserved</p>
     <div class="cb"></div>
 
-    <!-- Reference W3School -->
+    <!-- Reference code W3School. Available: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
     <script>
         function funcApplyRespClass() {
             var x = document.getElementById("myNav");

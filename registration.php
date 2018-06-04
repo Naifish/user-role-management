@@ -110,7 +110,7 @@ if (isset($_POST['btn-submit'])){
 
                     if ($result==true){
                         /* Reference: https://www.youtube.com/watch?v=KnX0p2Ey3Ek */
-                        session_set_cookie_params(time()+700,'/','localhost',false,true);
+                        session_set_cookie_params(time()+700,'/',$servername,false,true);
                         /* End Reference */
 
                         session_start();
@@ -135,7 +135,7 @@ if (isset($_POST['btn-submit'])){
 }
 
 
-/* Reference: https://www.w3schools.com/php/php_form_validation.asp */
+/* Reference code W3school. Available: https://www.w3schools.com/php/php_form_validation.asp */
 function checkInput($val) {
     $val = trim($val);
     $val = stripslashes($val);
@@ -179,7 +179,7 @@ function checkInput($val) {
             </section>
         </div>
         <?php include 'includes/footer.php'?>
-        <!-- Reference: https://codepen.io/diegoleme/pen/surIK -->
+        <!-- Reference code. Available: https://codepen.io/diegoleme/pen/surIK -->
         <script>
             var pass = document.getElementById("pass")
                 , confPass = document.getElementById("conf-pass");

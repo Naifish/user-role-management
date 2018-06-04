@@ -19,7 +19,7 @@
                     <a href="registration.php">REGISTRATION</a>
                 </li>
                 <?php } ?>
-                <!-- Reference W3School -->
+                <!-- Reference code W3School. Available: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
                 <li>
                     <a class="icon" onclick="funcApplyRespClass()" href="javascript:void(0);">
                         <i class="fa-bars fa"></i>
