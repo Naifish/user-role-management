@@ -7,6 +7,15 @@
                 <li>
                     <a href="index.php">HOME</a>
                 </li>
+                <?php if(!isset($_SESSION) || empty($_SESSION['email'])){ ?>
+                    <li>
+                        <a href="registration.php">REGISTRATION</a>
+                    </li>
+                <?php } else { ?>
+                    <li>
+                        <a href="welcome.php">Profile</a>
+                    </li>
+                <?php } ?>
                 <li>
                     <?php if(!isset($_SESSION) || empty($_SESSION['email'])){ ?>
                     <a href="login.php">LOGIN</a>
@@ -14,11 +23,6 @@
                     <a href="welcome.php?logout=true">Logout</a>
                     <?php } ?>
                 </li>
-                <?php if(!isset($_SESSION) || empty($_SESSION['email'])){ ?>
-                <li>
-                    <a href="registration.php">REGISTRATION</a>
-                </li>
-                <?php } ?>
                 <!-- Reference code W3School. Available: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
                 <li>
                     <a class="icon" onclick="funcApplyRespClass()" href="javascript:void(0);">
