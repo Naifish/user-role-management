@@ -82,7 +82,7 @@ li{
     left: 0px;
     background-color: rgba(104,181,43,0.2);
     border-radius: 20px;
-    height: 70px;
+    min-height: 70px;
 }
 .welcome-back-notification p{
     text-align: center;
