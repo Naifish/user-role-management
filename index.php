@@ -15,6 +15,11 @@ session_start();
     <div class="main">
 <?php include 'includes/header.php'?>
     </div>
+    <?php if(isset($_GET['status']) && $_GET['status']=='login'){ ?>
+    <div class="welcome-back-notification">
+        <p>Welcome Back <span><?php echo $_SESSION['firstName']; ?></span></p>
+    </div>
+    <?php } ?>
     <section class="main-plan">
         <h1>New Plan</h1>
         <section class="plan stu-plan">

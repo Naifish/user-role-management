@@ -10,7 +10,7 @@ session_start();
 session_regenerate_id(true);
 if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}
 
-$email;$pass;$errors;$arrLength=0;
+$email;$pass;$errors;$arrLength=0;$firstName;
 require 'includes/connection.php';
 
 if (isset($_POST['btn-login'])){
@@ -45,6 +45,7 @@ if (isset($_POST['btn-login'])){
                 ));
 
                 $result = $checkStatement->fetch(PDO::FETCH_ASSOC);
+                $firstName=$result['firstName'];
                 if(password_verify($pass, $result['pass'])) {
 
                     /* Reference: https://www.youtube.com/watch?v=KnX0p2Ey3Ek */
@@ -55,8 +56,9 @@ if (isset($_POST['btn-login'])){
                     $_SESSION['valid'] = true;
                     $_SESSION['timeout'] = time();
                     $_SESSION['email'] = $email;
+                    $_SESSION['firstName']=$firstName;
 
-                    header('location:welcome.php?status=login');
+                    header('location:index.php?status=login');
                 }else{
                     $errors[]="Email address or password is incorrect";
                     $arrLength=count($errors);
