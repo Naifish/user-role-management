@@ -6,6 +6,7 @@
  * Time: 11:06 AM
  */
 session_start();
+include 'includes/session.php';
 /*if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:welcome.php');}*/
 ?>
 <!DOCTYPE html >

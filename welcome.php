@@ -11,6 +11,7 @@ require 'includes/connection.php';
 $firstName="";
 
 session_start();
+include 'includes/session.php';
 
 if (isset($_GET['logout']) && $_GET['logout']==true){
     unset($_SESSION["email"]);
