@@ -55,6 +55,7 @@ if (isset($_POST['btn-login'])){
                     session_start();
                     $_SESSION['valid'] = true;
                     $_SESSION['timeout'] = time();
+                    $_SESSION['URS_AGNT']=md5($_SERVER['HTTP_USER_AGENT']);
                     $_SESSION['email'] = $email;
                     $_SESSION['firstName']=$firstName;
 

@@ -114,6 +114,7 @@ if (isset($_POST['btn-submit'])){
                         /* End Reference */
 
                         session_start();
+                        $_SESSION['URS_AGNT']=md5($_SERVER['HTTP_USER_AGENT']);
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
                         $_SESSION['email'] = $user->_get('email');
